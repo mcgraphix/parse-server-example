@@ -23,7 +23,7 @@ var api = new ParseServer({
   appName: 'Klok Mobile Beta',
   publicServerURL: 'https://klokcloudsync.herokuapp.com/parse',
   emailAdapter: {
-    module: 'parse-server-mailgun-adapter',
+    module: 'parse-server-simple-mailgun-adapter',
     options: {
       // The address that your emails come from
       fromAddress: 'no-reply@getklok.com'
