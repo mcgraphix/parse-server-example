@@ -19,6 +19,15 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },
+  appName: 'Klok Mobile Beta',
+  publicServerURL: 'https://klokcloudsync.herokuapp.com/parse',
+  emailAdapter: {
+    module: 'parse-server-mailgun-adapter',
+    options: {
+      // The address that your emails come from
+      fromAddress: 'no-reply@getklok.com'
+    }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
@@ -36,7 +45,7 @@ app.use(mountPath, api);
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
-  res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
+  res.status(200).send('Intentionally left blank');
 });
 
 // There will be a test page available on the /test path of your server url
